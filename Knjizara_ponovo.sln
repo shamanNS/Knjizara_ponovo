@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knjizara_ponovo", "Knjizara_ponovo\Knjizara_ponovo.csproj", "{0160B44A-E19F-4B83-87DC-3FFFF3D0A229}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knjizara_ponovo.Tests", "Knjizara_ponovo.Tests\Knjizara_ponovo.Tests.csproj", "{8E701F3B-1C1C-4BC7-B4FA-276989408745}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0160B44A-E19F-4B83-87DC-3FFFF3D0A229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0160B44A-E19F-4B83-87DC-3FFFF3D0A229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0160B44A-E19F-4B83-87DC-3FFFF3D0A229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0160B44A-E19F-4B83-87DC-3FFFF3D0A229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E701F3B-1C1C-4BC7-B4FA-276989408745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E701F3B-1C1C-4BC7-B4FA-276989408745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E701F3B-1C1C-4BC7-B4FA-276989408745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E701F3B-1C1C-4BC7-B4FA-276989408745}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
