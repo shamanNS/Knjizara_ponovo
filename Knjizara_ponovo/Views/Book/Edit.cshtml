@@ -1,0 +1,71 @@
+﻿@using Knjizara_ponovo.Models
+
+@model Knjizara_ponovo.ViewModels.BookGenreViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Editing book: @Model.Book.Name</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Book.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Book.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Book.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Book.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Book.Price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Book.Price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SelectedGenreId, "Genre", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*<select name="SelectedGenreId">
+                    @foreach (Genre item in Model.Genres)
+                    {
+                        if (item.Id == Model.Book.Genre.Id)
+                        {
+                            <option selected value="@item.Id">@item.Name</option>
+                        }
+                        else
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    }
+                </select>*@
+                @Html.DropDownListFor(model => model.SelectedGenreId, new SelectList(Model.Genres, "Id", "Name", Model.Book.Genre.Id), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SelectedGenreId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+      
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    @Html.HiddenFor(m => m.Book.Id)
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
