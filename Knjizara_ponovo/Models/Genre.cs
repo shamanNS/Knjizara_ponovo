@@ -14,7 +14,8 @@ namespace Knjizara_ponovo.Models
         [StringLength(20, MinimumLength = 3, ErrorMessage = "{0} must be betwen {2} and {1} characters.")]
         [Display(Name = "Genre name")]
         public string Name { get; set; }
-        public List<Book> Books { get; set; }
+
+        public virtual List<Book> Books { get; set; }
 
         public Genre()
         {
