@@ -16,18 +16,18 @@ namespace Knjizara_ponovo.Models
         public string Name { get; set; }
         
         [Required]
-        [Range(1.0, int.MaxValue, ErrorMessage = "{0} must be between {1} and {2}.")]
+        [Range(5, int.MaxValue, ErrorMessage = "{0} must be between {1} and {2}.")]
         public double Price { get; set; }
         public bool isDeleted { get; set; }
 
-        public Genre Genre { get; set; }
+        public virtual Genre Genre { get; set; }
 
         [ForeignKey("Genre")]
         public int GenreId { get; set; }
 
         public Book()
         {
-            this.Genre = new Genre();
+            //this.Genre = new Genre();
         }
     }
 }
