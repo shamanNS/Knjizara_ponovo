@@ -21,6 +21,12 @@ namespace Knjizara_ponovo.Controllers
         {
             var genres = db.Genres.ToList();
             //var genres = genreRepo.GetAll();
+
+            //Index + Create Partial experiment:
+            ViewBag.CreateModel = new Genre();
+
+            // kraj experimenta
+
             return View(genres);
         }
 
@@ -74,7 +80,13 @@ namespace Knjizara_ponovo.Controllers
                  return RedirectToAction("Index");
                 
             }
-            return View(genre);
+            // Index + Create Partial experiment:
+            ViewBag.CreateModel = genre;
+            var genres = db.Genres.ToList();
+            return View("Index", genres);
+            // kraj experimenta
+
+            // return View(genre);
         }
 
 

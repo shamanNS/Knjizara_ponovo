@@ -1,33 +1,47 @@
-﻿@model IEnumerable<Knjizara_ponovo.Models.Genre>
+﻿@using Knjizara_ponovo.Models
+@model IEnumerable<Knjizara_ponovo.Models.Genre>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th></th>
-    </tr>
+<div class="container" style="min-width: 340px">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-        </td>
-    </tr>
+    <div class="col-lg-6 col-md-6" style="border: 1px solid red">
+        <h2>List</h2>
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table table-bordered table-striped table-condensed">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="col-lg-6 col-md-6">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td class="btn-group-sm col-lg-6 col-md-6">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new {@class = "btn btn-warning"}) 
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" }) 
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div class="well col-lg-6 col-md-6" style="border: 1px solid red">
+        @{Html.RenderPartial("Create", ViewBag.CreateModel as Genre);}
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }
-
-</table>
